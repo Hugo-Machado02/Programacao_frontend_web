@@ -1,0 +1,105 @@
+<!-- componente.component.html -->
+<style>
+  .footer {
+    background: linear-gradient(135deg, #0f172a, #0b1220);
+    color: #ccc;
+    padding: 2rem 1rem;
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .footer h4 {
+    color: #fff;
+    margin-bottom: .9rem;
+    font-size: 1rem;
+  }
+
+  .footer a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: .5rem;
+    font-size: .9rem;
+    transition: color .2s;
+  }
+
+  .footer a:hover {
+    color: #fff;
+  }
+
+  .footer .brand {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: .8rem;
+    color: #fff;
+  }
+  .footer .brand svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    font-size: .85rem;
+    color: #888;
+  }
+</style>
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo / Brand -->
+    <div>
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="18" rx="3" stroke="white" stroke-opacity=".15" fill="white" fill-opacity=".06"/>
+          <path d="M7 8h10M7 12h6" stroke="white" stroke-opacity=".9" stroke-linecap="round"/>
+        </svg>
+        {{titulo}}
+      </div>
+      <p> {{ descricao }} </p>
+    </div>
+
+    <!-- Links rápidos -->
+    <div>
+      <h4>Navegação</h4>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/projetos">Projetos</a>
+      <a href="/relatorios">Relatórios</a>
+      <a href="/config">Configurações</a>
+    </div>
+
+    <!-- Contato -->
+    <div>
+      <h4>Contato</h4>
+      <p>{{ email }}</p>
+      <p>{{ telefone }}</p>
+      <p>{{ endereco }}</p>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <h4>Siga-nos</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 {{ titulo }} — Todos os direitos reservados
+  </div>
+</footer>

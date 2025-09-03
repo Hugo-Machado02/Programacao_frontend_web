@@ -1,0 +1,71 @@
+<!-- componente.component.html -->
+<style>
+  .gallery {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.07);
+  }
+
+  /* legenda */
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .5rem .8rem;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-size: .9rem;
+    text-align: center;
+  }
+</style>
+
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/300?random=1" alt="Foto 1">
+    <div class="caption">{{ titulo1 }}</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/300?random=2" alt="Foto 2">
+    <div class="caption">{{ titulo2 }}</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/300?random=3" alt="Foto 3">
+    <div class="caption">{{ titulo3 }}</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/300?random=4" alt="Foto 4">
+    <div class="caption">{{ titulo4 }}</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/300?random=5" alt="Foto 5">
+    <div class="caption">{{ titulo5 }}</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://picsum.photos/400/300?random=6" alt="Foto 6">
+    <div class="caption">{{ titulo6 }}</div>
+  </div>
+</div>

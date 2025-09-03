@@ -1,0 +1,129 @@
+<!-- componente.component.html -->
+<style>
+  .product-list {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+
+  .product-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .product-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .product-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: .4rem;
+  }
+
+  .product-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #16a34a;
+    margin-bottom: .6rem;
+  }
+
+  .product-description {
+    font-size: .9rem;
+    color: #444;
+    flex: 1;
+  }
+
+  .buy-btn {
+    margin-top: 1rem;
+    padding: .6rem;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: background .25s;
+    text-align: center;
+  }
+
+  .buy-btn:hover {
+    background: #1e40af;
+  }
+</style>
+
+<div class="product-list">
+  <div class="product-card">
+    <img src="https://picsum.photos/400/200?random=21" alt="Produto 1">
+    <div class="product-content">
+      <div class="product-title">{{ produto1 }}</div>
+      <div class="product-price">R$ 199,90</div>
+      <div class="product-description">
+        Breve descrição do produto para atrair o cliente e destacar suas qualidades.
+      </div>
+      <button class="buy-btn">Comprar</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/400/200?random=22" alt="Produto 2">
+    <div class="product-content">
+      <div class="product-title">{{ produto2 }}</div>
+      <div class="product-price">R$ 89,90</div>
+      <div class="product-description">
+        Um produto de ótima qualidade, com preço justo e excelente desempenho.
+      </div>
+      <button class="buy-btn">Comprar</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/400/200?random=23" alt="Produto 3">
+    <div class="product-content">
+      <div class="product-title">{{ produto3 }}</div>
+      <div class="product-price">R$ 59,90</div>
+      <div class="product-description">
+        Produto versátil e prático, ideal para o dia a dia e com ótima durabilidade.
+      </div>
+      <button class="buy-btn">Comprar</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/400/200?random=24" alt="Produto 4">
+    <div class="product-content">
+      <div class="product-title">{{ produto4 }}</div>
+      <div class="product-price">R$ 349,90</div>
+      <div class="product-description">
+        Descrição curta que chama atenção, destacando funcionalidades e benefícios.
+      </div>
+      <button class="buy-btn">Comprar</button>
+    </div>
+  </div>
+</div>

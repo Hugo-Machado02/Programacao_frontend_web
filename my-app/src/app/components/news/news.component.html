@@ -1,0 +1,105 @@
+<!-- componente.component.html -->
+<style>
+  .news-list {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+
+  .news-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+  }
+
+  .news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .news-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .news-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: .5rem;
+  }
+
+  .news-meta {
+    font-size: .85rem;
+    color: #666;
+    margin-bottom: .8rem;
+  }
+
+  .news-description {
+    font-size: .9rem;
+    color: #444;
+    flex: 1;
+  }
+
+  .read-more {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+    font-size: .9rem;
+    transition: color .2s;
+  }
+
+  .read-more:hover {
+    color: #1e40af;
+  }
+</style>
+
+<div class="news-list">
+  <div class="news-card">
+    <img src="https://picsum.photos/400/200?random=11" alt="Notícia 1">
+    <div class="news-content">
+      <div class="news-title">{{ noticia1 }}</div>
+      <div class="news-meta">{{ dadosGeral }}</div>
+      <div class="news-description">{{ descricaoGeral }}</div>
+      <a href="#" class="read-more">Ler mais →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <img src="https://picsum.photos/400/200?random=12" alt="Notícia 2">
+    <div class="news-content">
+       <div class="news-title">{{ noticia2 }}</div>
+      <div class="news-meta">{{ dadosGeral }}</div>
+      <div class="news-description">{{ descricaoGeral }}</div>
+      <a href="#" class="read-more">Ler mais →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <img src="https://picsum.photos/400/200?random=13" alt="Notícia 3">
+    <div class="news-content">
+       <div class="news-title">{{ noticia3 }}</div>
+      <div class="news-meta">{{ dadosGeral }}</div>
+      <div class="news-description">{{ descricaoGeral }}</div>
+      <a href="#" class="read-more">Ler mais →</a>
+    </div>
+  </div>
+</div>

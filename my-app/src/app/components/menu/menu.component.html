@@ -1,0 +1,178 @@
+<!-- componente.component.html -->
+<style>
+  /* reset simples */
+  :host { display: block; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+
+  /* nav base */
+  .nav {
+    background: linear-gradient(135deg,#0f172a,#0b1220);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand {
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .brand svg { width:28px; height:28px; }
+
+  /* menu items */
+  .menu {
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .menu li {
+    position:relative;
+  }
+
+  .menu a, .menu button.subbtn {
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.55rem .7rem;
+    border-radius:8px;
+    color:inherit;
+    text-decoration:none;
+    font-size:.95rem;
+    background:transparent;
+    border:0;
+    cursor:pointer;
+  }
+
+  .menu a:hover, .menu button.subbtn:hover { background: rgba(255,255,255,0.04); }
+
+  /* active */
+  .menu a.active, .menu a[aria-current="page"] {
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 4px 14px rgba(2,6,23,0.6);
+  }
+
+  /* submenu */
+  .submenu {
+    position:absolute;
+    top: calc(100% + 8px);
+    left:0;
+    min-width: 220px;
+    background: linear-gradient(180deg,#071024,#061421);
+    border-radius:10px;
+    padding:.35rem;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    display:none;
+    z-index:30;
+  }
+  .menu li:hover > .submenu { display:block; }
+
+  .submenu a {
+    display:block;
+    padding:.55rem .6rem;
+    border-radius:8px;
+    text-decoration:none;
+    color:inherit;
+    font-size:.92rem;
+  }
+  .submenu a:hover { background: rgba(255,255,255,0.03); }
+
+  /* mobile toggle (checkbox hack) */
+  #menu-toggle { display:none; }
+  .burger {
+    display:none;
+    background:transparent;
+    border:0;
+    color:inherit;
+    cursor:pointer;
+    padding:.35rem;
+    border-radius:8px;
+  }
+
+  /* mobile layout */
+  @media (max-width: 880px) {
+    .menu { 
+      position:fixed;
+      right:0;
+      top:0;
+      height:100vh;
+      width:260px;
+      background: linear-gradient(180deg,#071024,#041021);
+      flex-direction:column;
+      padding:1.2rem;
+      transform: translateX(100%);
+      transition: transform .25s ease;
+      gap:.2rem;
+      box-shadow: -8px 0 30px rgba(2,6,23,0.6);
+    }
+
+    #menu-toggle:checked + .nav + .menu { transform: translateX(0); }
+
+    .burger { display:inline-flex; }
+    .brand { flex: 1 1 auto; }
+    .menu li:hover > .submenu { display:none; } /* submenus expand differently on mobile */
+
+    .submenu {
+      position:relative;
+      display:none;
+      top:auto;
+      left:auto;
+      box-shadow:none;
+      padding:.25rem .25rem;
+      margin-left:.6rem;
+      background:transparent;
+    }
+
+    .menu li.show-sub .submenu { display:block; }
+
+    /* ensure nav sits above page content */
+    .nav { position:relative; z-index:40; }
+  }
+
+  /* small helper for separators */
+  .sep { width:1px; height:32px; background: rgba(255,255,255,0.03); margin:0 8px; border-radius:2px; }
+</style>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="brand">
+    <!-- ícone inline (SVG) -->
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="2" y="3" width="20" height="18" rx="3" stroke="white" stroke-opacity=".15" fill="white" fill-opacity=".06"/>
+      <path d="M7 8h10M7 12h6" stroke="white" stroke-opacity=".9" stroke-linecap="round"/>
+    </svg>
+    {{ titulo }}
+  </div>
+
+  <!-- checkbox + label para controlar menu móvel (sem TS) -->
+  <input id="menu-toggle" type="checkbox" />
+  <label for="menu-toggle" class="burger" aria-hidden="true">
+    <!-- ícone do menu -->
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </label>
+
+  <!-- menu principal -->
+  <ul class="menu" role="menubar" aria-label="Menu principal">
+
+    <li role="none" style="margin-left:auto; display:flex; align-items:center;">
+      <span class="sep" aria-hidden="true"></span>
+      <a role="menuitem" routerLink="/perfil" routerLinkActive="active">Olá, {{ usuario }}</a>
+    </li>
+  </ul>
+</nav>
+
+<!--
+Observações rápidas:
+- Se não usar rotas Angular, substitua `routerLink="/..."` por `href="/..."`.
+- `routerLinkActive="active"` aplica a classe `active` automaticamente quando a rota bate.
+- No mobile a abertura é feita pelo checkbox (nenhum TS). Se preferir controlar via TS, remova o checkbox e use (click) para alternar uma variável de componente.
+- Para submenus em mobile você pode adicionar um pequeno script (TS) que adiciona/remova a classe `show-sub` ao <li> pai; eu deixei por CSS para desktop e pronto para adaptar.
+-->

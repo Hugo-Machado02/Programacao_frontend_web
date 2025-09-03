@@ -4,3 +4,4 @@ Atividades referentes a matéria de Programação Front-End Web do Curso de Sist
 
 #  📚 Atividades 📚
 - 1º Atividade _(Exercícios de Lógica em sala de aula)_: [Clique Aqui](https://github.com/Hugo-Machado02/)
+- 2º Atividade _(Projeto Aprendizado - Angular)_: [Clique Aqui](https://github.com/Hugo-Machado02/tree/atividade_angular)

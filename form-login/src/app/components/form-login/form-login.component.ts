@@ -1,11 +1,12 @@
 import { Component, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { Login } from '../shared/login';
 
 @Component({
   selector: 'app-form-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './form-login.component.html',
   styleUrl: './form-login.component.css'
 })

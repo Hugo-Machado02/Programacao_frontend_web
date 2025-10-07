@@ -1,0 +1,30 @@
+.containerInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.labelInput {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.inputTxt {
+  padding: 12px 14px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.inputTxt:focus {
+  outline: none;
+  border-color: #6c757d;
+  box-shadow: 0 0 8px rgba(108, 117, 125, 0.2);
+  background: #fff;
+}

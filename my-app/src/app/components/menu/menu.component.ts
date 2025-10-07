@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  titulo = "Projeto - 01";
+  titulo = "Projeto - Aprendizado Angular";
   usuario = "Hugo Machado";
 }

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  titulo = "Projeto - 01";
+  titulo = "Projeto - Aprendizado Angular";
   op1 = "Dashboard";
   op2 = "Projetos";
   op3 = "Relatórios";
